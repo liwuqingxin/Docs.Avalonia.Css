@@ -1,6 +1,6 @@
 # Table of contents
 
-* [欢迎](README.md)
+* [🎆 欢迎](README.md)
 
 ## Documentation
 
@@ -11,7 +11,8 @@
   * [源码结构介绍](documentation/cong-zhe-li-kai-shi/yuan-ma-jie-gou-jie-shao.md)
   * [配置开发环境](documentation/cong-zhe-li-kai-shi/pei-zhi-kai-fa-huan-jing.md)
   * [FAQ](documentation/cong-zhe-li-kai-shi/faq.md)
-* [💎 最佳实践](documentation/zui-jia-shi-jian.md)
+* [💎 最佳实践](documentation/zui-jia-shi-jian/README.md)
+  * [如何定义良好的控件模板](documentation/zui-jia-shi-jian/ru-he-ding-yi-liang-hao-de-kong-jian-mo-ban.md)
 * [❓ 主题帮助](documentation/zhu-ti-bang-zhu/README.md)
   * [如何使用 Acss](documentation/zhu-ti-bang-zhu/ru-he-shi-yong-acss.md)
   * [如何使用 Acss.Controls](documentation/zhu-ti-bang-zhu/ru-he-shi-yong-acss.controls.md)
