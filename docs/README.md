@@ -1,6 +1,9 @@
 ---
-description: 欢迎使用Avalonia Css使用文档
+description: 欢迎使用Avalonia Css使用文档。
 ---
 
 # 欢迎
 
+{% hint style="info" %}
+
+{% endhint %}
