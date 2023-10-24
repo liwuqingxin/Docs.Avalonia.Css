@@ -1,5 +1,5 @@
 ---
-description: 欢迎使用Avalonia Css使用文档。
+description: 欢迎使用 Avalonia Css 使用文档。
 ---
 
 # 🎆 欢迎
@@ -10,7 +10,7 @@ description: 欢迎使用Avalonia Css使用文档。
 关于 Avalonia，请查看[这里](./)。
 {% endhint %}
 
-具体使用参考：
+Acss 的具体使用参考：
 
 {% content-ref url="documentation/cong-zhe-li-kai-shi/" %}
 [cong-zhe-li-kai-shi](documentation/cong-zhe-li-kai-shi/)
