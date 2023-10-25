@@ -4,13 +4,15 @@
 本页面提供最基本的 Acss 使用示例。其他复杂场景请具体参考本小节内部其他章节。
 {% endhint %}
 
-* 安装依赖库。
+## 安装依赖库
 
 ```bash
 dotnet add package Nlnet.Avalonia.Css --version 1.0.0-beta.4
 ```
 
-* 注册 Acss 和类型解析。这个过程也可以延后到初始化一起进行。
+## 注册 Acss 和类型解析
+
+这个过程也可以延后到初始化一起进行。
 
 ```csharp
 private static AppBuilder BuildAvaloniaApp()
@@ -28,7 +30,15 @@ private static AppBuilder BuildAvaloniaApp()
 }
 ```
 
-* 初始化 AcssContext。你可以在 Application.Initialize() 函数当中做这些事情。当然其他时机也不受影响。
+## 初始化 AcssContext
+
+你可以在 Application.Initialize() 函数当中选择性地做这些事情。当然其他时机也不受影响。
+
+* 使用 Acss。
+* 配置参数。
+* 注册类型到类型解释服务中。
+* 创建 Rider 配置。如果你使用了 Rider 作为开发工具的话。
+* 加载 Acss 源。
 
 ```csharp
 private class void Initialize()
