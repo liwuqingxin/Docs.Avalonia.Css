@@ -9,7 +9,7 @@ Acss 属于解释性语言，支持使用任何文本编辑器对其进行编辑
 ## 使用Rider
 
 {% hint style="warning" %}
-由于开发工作量比较大，目前并未提供 Rider 的 Acss 语言支持插件，后续能够支持的时间目前也不能确定。如果你对此感兴趣并且愿意加入我们的开发工作，非常欢迎通过邮箱 yangqi1990917@@163.com 联系我们。
+由于开发工作量比较大，目前并未提供 Rider 的 Acss 语言支持插件，后续能够支持的时间目前也不能确定。如果你对此感兴趣并且愿意加入我们的开发工作，非常欢迎通过邮箱 yangqi1990917@163.com 联系我们。
 {% endhint %}
 
 目前，对于 Rider，我们提供了简陋的使用方式。我们需要在 IAcssContext 构建完成后，执行以下代码来生成当前环境的 Rider 配置文件。我们会尝试将它自动放置到 Rider 的安装目录下。如果执行失败，请通过参数检查异常情况，并自行处理配置文件的创建。
@@ -25,6 +25,10 @@ riderBuilder.TryBuildRiderSettingsForAcss(out _, out _, null);
 Rider 配置文件的目录一般为：
 
 C:/Users/**{user}**/AppData/Roaming/JetBrains/**Rider{version}**/filetypes/**Acss.xml**
+{% endhint %}
+
+{% hint style="info" %}
+Rider 配置文件依赖于 AcssContext，不同的上下文环境会产生不同的配置，主要体现在注册了不同的类型到类型解析服务，会产生不同的类型代码高亮和提示。
 {% endhint %}
 
 {% hint style="warning" %}

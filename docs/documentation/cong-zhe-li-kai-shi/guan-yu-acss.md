@@ -1,6 +1,6 @@
 # 关于 Acss
 
-## Avalonia Css
+## Acss
 
 Avalonia Css 不遵循 CSS（Cascading Style Sheets）标准。它是用来分离 Avalonia UI 的结构和样式的。因为概念和语法上和 CSS 类似，因此我们仍然借用这个名字，将其命名为 Avalonia Css，或者 Acss。
 
