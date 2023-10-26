@@ -40,6 +40,8 @@ private static AppBuilder BuildAvaloniaApp()
 * 创建 Rider 配置。如果你使用了 Rider 作为开发工具的话。
 * 加载 Acss 源。
 
+到此，正常来说，Acss 已经生效。
+
 ```csharp
 private class void Initialize()
 {

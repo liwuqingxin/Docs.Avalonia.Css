@@ -42,6 +42,14 @@ Nlnet.Avalonia.Css.Controls 针对 Avalonia 全部的原生控件定义了一套
 后续计划提供调试工具来支持控件库结构的速览。目前只能通过查看源代码来了解内部结构和一些 classes、name 等。
 {% endhint %}
 
-{% hint style="info" %}
-建议：自定义样式库中加上主题对象，参考 Nlnet.Avalonia.Css.Fluent 中的 AcssFluentTheme。
+{% hint style="danger" %}
+**最佳实践**
+
+请注意，当你使用 Acss 代码时，请尽量将其放在你特有的名称的路径下，避免和其他库的 Acss 文件共存时，被放入同一目录，导致文件冲突或者错误加载。
+
+
+
+例如，Nlnet.Avalonia.Css.Fluent 库的 Acss 代码文件的基路径为：
+
+> "/Acss/Nlnet.Avalonia.Css.Fluent/"
 {% endhint %}

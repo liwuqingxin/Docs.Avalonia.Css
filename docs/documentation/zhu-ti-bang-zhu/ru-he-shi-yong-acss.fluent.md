@@ -29,7 +29,7 @@ AcssFluentTheme 使用了嵌入的 Avalonia 资源作为代码源，主题下所
 AcssFluentTheme 支持优先使用本地资源。可以通过设置 `UseRecommendedPreferSource` 属性让 AcssFluentTheme 优先加载嵌入资源的 Uri 的 AbsolutePath 作为相对路径的本地文件，相对目录的锚定目录为当前程序目录。
 
 {% hint style="warning" %}
-需要注意的是，当前版本并未对外提供控制嵌入代码源导出的 API，因此使用本地资源的同时，需要设置 AutoExportSourceToLocal 属性为 true，让 Acss 尝试将所有嵌入的代码资源导出到本地。
+需要注意的是，当前版本并未对外提供控制嵌入代码源导出的 API，因此使用本地资源的同时，需要设置 AutoExportSourceToLocal 属性为 true，让 AcssFluentTheme 尝试将所有嵌入的代码资源导出到本地。
 {% endhint %}
 
 ```xml
@@ -76,4 +76,3 @@ public static class Cdt
 {% hint style="success" %}
 优先使用本地文件的优点是，可以修改本地文件来修改主题样式。
 {% endhint %}
-
