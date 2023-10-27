@@ -14,10 +14,6 @@ Acss 的原理比较简单。其运行过程如下图所示。
 
 TypeResolver 是一个类型解析服务，部署在 AcssContext 中。用户在构建 AcssContext 时，需要将自己的想要使用 Acss 的类型注册到 TypeResolver 当中。没有被注册的类型出现在 Acss 代码中时，会无法被解析而跳过，并且会输出调试信息，关于调试请查看[这里](tiao-shi.md)。
 
-{% hint style="info" %}
-Acss 内置了 Avalonia.Controls，Avalonia.Base 两个程序集内所有 AvaloniaObject 子类类型的解析器，以及部分必要的类型的解释器。
-{% endhint %}
-
 ## Acss Source
 
 Acss Source 是 Acss 代码的定义，在 Acss 中表现为一个名为 ISource 的接口。我们目前内置了两种代码源，本地文件（File Source）和内嵌资源（EmbeddedSource）。具体请参考[代码源](../zhu-ti-bang-zhu/ru-he-shi-yong-acss/dai-ma-yuan.md)。

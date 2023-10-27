@@ -14,6 +14,8 @@
   * [FAQ](documentation/cong-zhe-li-kai-shi/faq.md)
 * [❓ 主题帮助](documentation/zhu-ti-bang-zhu/README.md)
   * [如何使用 Acss](documentation/zhu-ti-bang-zhu/ru-he-shi-yong-acss/README.md)
+    * [类型解析](documentation/zhu-ti-bang-zhu/ru-he-shi-yong-acss/lei-xing-jie-xi.md)
+    * [配置参数](documentation/zhu-ti-bang-zhu/ru-he-shi-yong-acss/pei-zhi-can-shu.md)
     * [代码源](documentation/zhu-ti-bang-zhu/ru-he-shi-yong-acss/dai-ma-yuan.md)
     * [加载范围](documentation/zhu-ti-bang-zhu/ru-he-shi-yong-acss/jia-zai-fan-wei.md)
   * [如何使用 Acss.Controls](documentation/zhu-ti-bang-zhu/ru-he-shi-yong-acss.controls.md)

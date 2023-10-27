@@ -14,6 +14,10 @@ dotnet add package Nlnet.Avalonia.Css --version 1.0.0-beta.4
 
 这个过程也可以延后到初始化一起进行。
 
+{% hint style="danger" %}
+当前版本不支持使用多个 AcssContext，仅支持默认的 AcssContext，即 `AcssContext.Default`。
+{% endhint %}
+
 ```csharp
 private static AppBuilder BuildAvaloniaApp()
 {
@@ -46,6 +50,10 @@ private static AppBuilder BuildAvaloniaApp()
 private class void Initialize()
 {
     ...
+    
+    // Use default css builder. It has same effect to 
+    // AcssExtension.UseAvaloniaCssDefaultBuilder().
+    AcssContext.UseDefaultContext();
 	
     // [Optional] Set the current theme and other settings.
     var cfg = AcssContext.Default.GetService<IAcssConfiguration>();

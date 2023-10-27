@@ -20,10 +20,8 @@ dotnet add package Nlnet.Avalonia.MessageBox --version 1.0.0-beta.4
 // WPF Standard: call messagebox synchronous.
 private void OnClick(object? sender, RoutedEventArgs e)
 {
-    var buttons = (Buttons)CbxButtons.SelectionBoxItem!;
-    var image = (Images)CbxImage.SelectionBoxItem!;
-    var result = MessageBox.Show("Hello, this is Nlnet MessageBox :)", 
-        "Welcome", buttons, image);
+    var result = MessageBox.Show("Hello, this is Nlnet MessageBox!", 
+        "Welcome", Buttons.OkCancel, Images.Info);
     
     TbxResult.Text = result.ToString();
 }
@@ -35,10 +33,8 @@ private void OnClick(object? sender, RoutedEventArgs e)
 // Avalonia Standard: call messagebox asynchronous.
 private async void OnClick(object? sender, RoutedEventArgs e)
 {
-    var buttons = (Buttons)CbxButtons.SelectionBoxItem!;
-    var image   = (Images)CbxImage.SelectionBoxItem!;
     var result  = await MessageBox.ShowAsync("Hello, this is Nlnet MessageBox :)", 
-        "Welcome", buttons, image);
+         "Welcome", Buttons.OkCancel, Images.Info);
     
     TbxResult.Text = result.ToString();
 }

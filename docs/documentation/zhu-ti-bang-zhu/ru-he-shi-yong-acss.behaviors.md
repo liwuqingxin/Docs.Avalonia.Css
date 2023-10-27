@@ -18,6 +18,11 @@ dotnet add package Nlnet.Avalonia.Css.Behaviors --version 1.0.0-beta.4
 ## 自定义行为
 
 * 引用包 Nlnet.Avalonia.Css.CompileGenerator。
+
+```bash
+dotnet add package Nlnet.Avalonia.Css.CompileGenerator --version 1.0.0-beta.4
+```
+
 * 创建行为声明类，继承 AvaloniaObject 类和 IBehaviorDeclarer 接口。
 
 ```csharp
