@@ -1,7 +1,11 @@
 # 如何使用 Acss
 
 {% hint style="info" %}
-本页面提供最基本的 Acss 使用示例。其他复杂场景请具体参考本小节内部其他章节。
+**特别注意**
+
+如果没有自定义扩展的需求，按照本页的示例即可使用 Acss。
+
+本页面提供最基本的 Acss 使用示例。其他复杂的使用或者自定义场景请具体参考本小节内部其他章节。
 {% endhint %}
 
 ## 安装依赖库
@@ -15,7 +19,7 @@ dotnet add package Nlnet.Avalonia.Css --version 1.0.0-beta.4
 这个过程也可以延后到初始化一起进行。
 
 {% hint style="danger" %}
-当前版本不支持使用多个 AcssContext，仅支持默认的 AcssContext，即 `AcssContext.Default`。
+当前版本不支持使用多个 AcssContext，仅支持默认的 AcssContext.Default。
 {% endhint %}
 
 ```csharp
@@ -51,13 +55,13 @@ private class void Initialize()
 {
     ...
     
-    // Use default css builder. It has same effect to 
+    // [Optional] Use default css builder. It has same effect to 
     // AcssExtension.UseAvaloniaCssDefaultBuilder().
     AcssContext.UseDefaultContext();
 	
-    // [Optional] Set the current theme and other settings.
+    // [Optional] Set the current accent and other settings.
     var cfg = AcssContext.Default.GetService<IAcssConfiguration>();
-    cfg.Theme = "blue";
+    cfg.Accent = "blue";
     cfg.EnableTransitions = true;
     
     // [Optional] Create rider settings for this Acss builder.

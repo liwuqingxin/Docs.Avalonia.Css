@@ -8,6 +8,12 @@ Acss 除了内置的类型解析外，你需要自行注册所有用到的类型
 Acss 内置了 Avalonia.Controls，Avalonia.Base 两个程序集内所有 AvaloniaObject 子类类型的解析器，以及部分必要的类型的解析器。
 {% endhint %}
 
+{% hint style="danger" %}
+**特别注意**
+
+目前我们没有做命名空间的映射，因此类型重名的几率比较大。如果有这种情况，请自行管理重名类型的别名，避免冲突。
+{% endhint %}
+
 ## 程序集类型解析器
 
 我们提供了非常方便的程序集类型解析器 `GenericTypeResolver<TTypeSink>`。它可以通过锚定的类型，将其所在程序集中所有 AvaloniaObject 类型的子类都加入到解析器当中。例如：
