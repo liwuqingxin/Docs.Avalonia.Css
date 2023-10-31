@@ -1,11 +1,11 @@
-# 注释
+# Comment
 
-Acss 支持行注释和块注释两种注释形式。行注释使用 “//” 表示，块注释使用 “/\* \*/” 表示。
+Acss supports two comment forms: line comments and block comments. Line comments are represented by "//" and block comments are represented by "/\* \*/".
 
 ```css
 Code here. // line comment
 
 /* block comment
-   block comment
-   block comment */
+    block comment
+    block comment */
 ```
