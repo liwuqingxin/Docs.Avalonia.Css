@@ -1,0 +1,26 @@
+# .github/workflows/openai-translate.yml
+name: Continuous Translation
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: yunwei37/OpenAI-Continuous-Translator@master
+      with:
+          git_repo_url: https://github.com/liwuqingxin/Docs.Avalonia.Css
+          api_key: ${{ secrets.OPENAI_API_KEY }}
+          source_language: "Chinese"
+          target_language: "English"
+          additional_prompt: ""
+          i18n_surfix: "_en-us"
+          file_types: ""
+          file_path_filter: "./zh-cn"
+    - name: Add & Commit
+      uses: EndBug/add-and-commit@v9.1.1
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
