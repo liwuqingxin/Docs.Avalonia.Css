@@ -17,7 +17,7 @@ jobs:
           source_language: "Chinese"
           target_language: "English"
           i18n_surfix: "_en-us"
-          # file_path_filter: "./zh-cn"
+          file_path_filter: "./zh-cn"
     - name: Add & Commit
       uses: EndBug/add-and-commit@v9.1.1
     - name: Create Pull Request
