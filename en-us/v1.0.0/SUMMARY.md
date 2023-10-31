@@ -26,7 +26,7 @@
   * [如何使用 Acss.Behaviors](documentation/zhu-ti-bang-zhu/ru-he-shi-yong-acss.behaviors.md)
 * [📏 Acss 语法](documentation/acss-yu-fa/README.md)
   * [注释](documentation/acss-yu-fa/zhu-shi.md)
-  * [资源](documentation/acss-yu-fa/zi-yuan.md)
+  * [Resource](documentation/acss-yu-fa/zi-yuan.md)
   * [样式](documentation/acss-yu-fa/yang-shi.md)
   * [动画](documentation/acss-yu-fa/dong-hua.md)
   * [行为](documentation/acss-yu-fa/hang-wei.md)
