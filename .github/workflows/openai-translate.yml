@@ -16,9 +16,7 @@ jobs:
           api_key: ${{ secrets.OPENAI_API_KEY }}
           source_language: "Chinese"
           target_language: "English"
-          additional_prompt: ""
           i18n_surfix: "_en-us"
-          file_types: ""
           file_path_filter: "./zh-cn"
     - name: Add & Commit
       uses: EndBug/add-and-commit@v9.1.1
