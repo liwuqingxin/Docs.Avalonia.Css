@@ -28,4 +28,4 @@ Acss Source 是 Acss 代码的定义，在 Acss 中表现为一个名为 ISource
 
 ## Avalonia Object
 
-Acss 加载器加载过程中，AcssTokens 创建后，会继续被解析为具体的 Avalonia 对象，例如 Style、Resource、Animation、其他 Object 等。这些对象会按照一定的规则被加载到 Avalonia 的 UI 当中，具体规则参考[加载范围](../zhu-ti-bang-zhu/ru-he-shi-yong-acss/jia-zai-fan-wei.md)。
+Acss 加载器加载过程中，AcssTokens 创建后，会继续被解析为具体的 Avalonia 对象，例如 Style、Resource、Animation、其他 Object 等。这些对象会按照一定的规则被加载到 Avalonia 的 UI 当中。
