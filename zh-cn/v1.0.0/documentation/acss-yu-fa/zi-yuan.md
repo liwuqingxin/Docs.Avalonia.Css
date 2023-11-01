@@ -34,8 +34,6 @@ And description is "Resources description".
 {% hint style="info" %}
 针对资源集合，目前我们仅支持“描述”（desc）、“主题颜色”（accent）和“主题”（theme）三个属性。其中 desc 是普通属性，accent 和 theme 是过滤属性，accent 过滤的有效参考值在 IAcssConfigration 当中，参考[配置参数](../zhu-ti-bang-zhu/ru-he-shi-yong-acss/pei-zhi-can-shu.md)，theme 过滤的有效参考值是 Avalonia 的 ThemeVariant。
 
-
-
 **特别提示**
 
 我们稍后计划针对 Acss 的[过滤控制](../cong-zhe-li-kai-shi/guan-yu-acss.md#4.-guo-lv-kong-zhi-kai-fa-zhong-...)的特性，提供更多的过滤属性。
@@ -149,7 +147,7 @@ Linear Brush 目前语法定义不完善，语法可能会发生破坏性更新�
     linear(LB02): (0 0.5 0 1.4)[
         #ececec 0;
         red 0.8;
-        #D2D3D4 1;
+        var(AccentColor) 0.5 0.9;
     ]
 }
 
@@ -163,7 +161,7 @@ Linear Brush 目前语法定义不完善，语法可能会发生破坏性更新�
   它有 3 个 GradientStop，分别是：
       Color = #ececec，Offset = 0
       Color = red，    Offset = 0.8
-      Color = #D2D3D4，Offset = 1
+      Color = Key 为 AccentColor 的动态资源应用 0.5 的透明度，Offset = 1
 */
 ```
 
@@ -202,7 +200,7 @@ Transition 目前语法定义不完善，语法可能会发生破坏性更新。
     double(duration): 0.125;
     double(delay): 0.125;
 
-    /* TargetType | Property | Duration | [Delay] | [Ease] */
+    /* TargetType.Property | Duration | [Delay] | [Ease] */
     transition(trans01):
         Border.BorderThickness 0.2);
     transition(trans02):
@@ -213,6 +211,10 @@ Transition 目前语法定义不完善，语法可能会发生破坏性更新。
         Border.BorderThickness var(duration) 0.4 0,0,1,1);
 }
 ```
+
+{% hint style="success" %}
+最后一个参数缓动函数 \[Ease] 是支持使用 KeySpine 来定义缓动函数的，例如 ‘**.17,.67,.83,.67**’，它表示使用点 (0, 0) 和点 (1, 1) 作为起始点，(0.17, 0.67) 和点 (0.83, 0.67) 作为控制点产生的贝塞尔曲线。KeySpine 的用法请参考 [这里](https://cubic-bezier.com/#.17,.67,.83,.67)（外链）。
+{% endhint %}
 
 {% hint style="warning" %}
 Transition 资源的最后一个可选参数 \[Ease] 也是支持动态资源（var）的，但是目前我们没有支持定义缓动函数（Easing Function）的资源，因此实际上目前它是没办法使用动态资源的。
@@ -233,4 +235,3 @@ BoxShadows 目前语法定义不完善，语法可能会发生破坏性更新。
     BoxShadow(popup-shadow): 0 10 20 0 #3666;
 }
 ```
-
