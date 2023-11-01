@@ -1,5 +1,5 @@
 ---
-description: 欢迎使用 Avalonia Css 使用文档。
+description: Welcome to Avalonia Css Documentation.
 layout:
   title:
     visible: true
@@ -13,21 +13,25 @@ layout:
     visible: true
 ---
 
-# 🎆 欢迎
+# 🎆 Welcome
 
 <figure><img src=".gitbook/assets/Acss.svg" alt=""><figcaption></figcaption></figure>
 
-> Acss Version：1.0.0-beta.4
->
 > Avalonia Version：11.0.0
 
-Avalonia Css，简称 Acss。它是一个 Avalonia UI 框架的扩展功能库，提供和结构分离的样式编写功能。
+{% hint style="success" %}
+**NOTE**
 
-{% hint style="info" %}
-关于 Avalonia，请查看[这里](https://www.avaloniaui.net/)。
+This documentation is translated from chinese by [DeepL](https://www.deepl.com/translator#zh/en/). That's awesome! :thumbsup:
 {% endhint %}
 
-Acss 的具体使用参考：
+Avalonia Css, also named Acss, is an extension for Avalonia UI, providing ability to seperate the structure and style.
+
+{% hint style="info" %}
+Abount Avalonia, please see [here](https://www.avaloniaui.net/).
+{% endhint %}
+
+Get started about Acss here.
 
 {% content-ref url="documentation/cong-zhe-li-kai-shi/" %}
 [cong-zhe-li-kai-shi](documentation/cong-zhe-li-kai-shi/)

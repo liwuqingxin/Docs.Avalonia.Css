@@ -1,18 +1,18 @@
 ---
-description: Acss 编辑器
+description: Acss Editor
 ---
 
-# 配置开发环境
+# Configuring the development environment
 
-Acss 属于解释性语言，支持使用任何文本编辑器对其进行编辑。最简单地，你可以在记事本中编辑它。不过我们推荐使用 IDE 来获得更好的编写体验。
+Acss is an interpreted language and supports editing it using any text editor. Most simply, you can edit it in Notepad. However, we recommend using an IDE for a better authoring experience.
 
-## 使用 Rider
+## Using Rider
 
 {% hint style="warning" %}
-由于开发工作量比较大，目前并未提供 Rider 的 Acss 语言支持插件，后续能够支持的时间目前也不能确定。如果你对此感兴趣并且愿意加入我们的开发工作，非常欢迎通过邮箱 yangqi1990917@163.com 联系我们。
+Due to the heavy development workload, the Acss language support plugin for Rider is not available at this time, and it is uncertain when it will be available. If you are interested and would like to join our development efforts, you are more than welcome to contact us at yangqi1990917@163.com.
 {% endhint %}
 
-目前，对于 Rider，我们提供了简陋的使用方式。我们需要在 IAcssContext 构建完成后，执行以下代码来生成当前环境的 Rider 配置文件。我们会尝试将它自动放置到 Rider 的安装目录下。如果执行失败，请通过参数检查异常情况，并自行处理配置文件的创建。
+For now, for Rider, we provide rudimentary usage. We need to execute the following code after the IAcssContext has been built to generate a Rider configuration file for the current environment. We will try to place it automatically in the Rider installation directory. If the execution fails, please check for exceptions via parameters and handle the creation of the configuration file yourself.
 
 {% code lineNumbers="true" %}
 ```csharp
@@ -22,25 +22,25 @@ riderBuilder.TryBuildRiderSettingsForAcss(out _, out _, null);
 {% endcode %}
 
 {% hint style="info" %}
-Rider 配置文件的目录一般为：
+The directory for the Rider configuration file is typically:
 
 C:/Users/**{user}**/AppData/Roaming/JetBrains/**Rider{version}**/filetypes/**Acss.xml**
 {% endhint %}
 
 {% hint style="info" %}
-Rider 配置文件依赖于 AcssContext，不同的上下文环境会产生不同的配置，主要体现在注册了不同的类型到类型解析服务，会产生不同的类型代码高亮和提示。
+The Rider configuration file relies on AcssContext, and different context environments produce different configurations, mainly in the sense that different types are registered to the type resolution service, which produces different type code highlighting and hints.
 {% endhint %}
 
 {% hint style="warning" %}
-Rider 的配置文件不会热加载，该配置更新后，需要重新启动 Rider 才能生效。重启后，代码高亮则表示文件生效。
+The Rider's configuration file is not hot-loaded, and a restart of the Rider is required for this configuration update to take effect. After restarting, the code highlighting indicates that the file is in effect.
 {% endhint %}
 
-## 使用 Visual Studio Code
+## Using Visual Studio Code
 
-我们对 Visual Studio Code 提供了简陋的 Acss 的语言插件。可以访问[这里](https://marketplace.visualstudio.com/items?itemName=nlnet.avalonia-css-extension)下载安装，或者在 VSCode 应用当中搜索 ‘avalonia-css-extension’ 进行安装。
+We provide a rudimentary Acss language plugin for Visual Studio Code. It can be downloaded and installed here, or by searching for 'avalonia-css-extension' in the VSCode app.&#x20;
 
-和 Rider 一样，该插件目前暂时没有更新计划，效果一般。😥😥😥
+Like Rider, there are no updates planned for this plugin at this time, and the results are mediocre.😥😥😥
 
 {% hint style="warning" %}
-Rider 和 Visual Studio Code 保存文件时会触发两次文件保存动作，目前版本我们并未做过滤处理。
+Rider and Visual Studio Code trigger two file saves when saving a file, which we have not filtered for in the current version.
 {% endhint %}

@@ -1,16 +1,13 @@
 ---
-description: 我比较懒，不想在源码仓库中再维护关于仓库的文档，直接写在这里好了。
+description: >-
+  I'm lazy, I don't want to maintain documentation about the repository in the
+  source repository, so I'll just write it here.
 ---
 
-# 源码结构介绍
+# About source code
 
-## 工程说明
+## Projects Instruction
 
-源码仓库主要包括了以下功能库。关于各个功能库的使用方法，请参考[主题帮助](../zhu-ti-bang-zhu/)。
+The source code repository mainly includes the following function libraries. For more information on how to use each library, please refer to the [How-to](../zhu-ti-bang-zhu/) section.
 
-<table><thead><tr><th width="270">库</th><th>功能</th></tr></thead><tbody><tr><td>Nlnet.Avalonia.Css</td><td>Acss 核心库，用于支持 Acss 的核心功能。</td></tr><tr><td>Nlnet.Avalonia.Css.Behaviors</td><td>Acss 行为库，定义了 Acss 默认支持的所有行为。</td></tr><tr><td>Nlnet.Avalonia.Css.Controls</td><td>基于 Acss 原则的 Avalonia 原生控件模板库。</td></tr><tr><td>Nlnet.Avalonia.Css.Fluent</td><td>基于 Acss 的 Avalonia 原生控件的 Fluent 主题样式库。</td></tr><tr><td>Nlnet.Avalonia.MessageBox</td><td>独立的 MessageBox 库，支持基于 Acss 样式和独立样式。</td></tr><tr><td>Nlnet.Avalonia.Senior</td><td>高级控件库，支持基于 Acss 样式和独立样式。</td></tr></tbody></table>
-
-
-
-
-
+<table><thead><tr><th width="270">Library</th><th>Functionality</th></tr></thead><tbody><tr><td>Nlnet.Avalonia.Css</td><td>Acss core libraries for supporting the core functionality of Acss.</td></tr><tr><td>Nlnet.Avalonia.Css.Behaviors</td><td>Acss Behavior Library, which defines all behaviors supported by Acss by default.</td></tr><tr><td>Nlnet.Avalonia.Css.Controls</td><td>Avalonia native control template library based on Acss principles.</td></tr><tr><td>Nlnet.Avalonia.Css.Fluent</td><td>Fluent theme style library based on Acss' Avalonia native controls.</td></tr><tr><td>Nlnet.Avalonia.MessageBox</td><td>Standalone MessageBox library that supports Acss-based styles and standalone styles.</td></tr><tr><td>Nlnet.Avalonia.Senior</td><td>Advanced controls library with support for Acss-based styles and standalone styles.</td></tr></tbody></table>

@@ -1,57 +1,57 @@
-# 关于 Acss
+# About Acss
 
-## Acss
+## &#x20;Acss
 
-Avalonia Css 不遵循 CSS（Cascading Style Sheets）标准。它是用来分离 Avalonia UI 的结构和样式的。因为概念和语法上和 CSS 类似，因此我们仍然借用这个名字，将其命名为 Avalonia Css，或者 Acss。
+Avalonia Css does not follow the standard of CSS (Cascading Style Sheets). It is used to seperate the structure and style of Avalonia UI. We named it Acss as it has the similar concepts and syntax to CSS.
 
-## Acss 的优势
+## Advantages of Acss
 
-我们通过 Acss 将 Avalonia 的 axaml 拆分为结构和样式。结构定义 UI 的骨骼，类似于 Html 的角色。样式定义 UI 的样貌，类似于 CSS 的角色。这样做有以下好处：
+With Acss we split Avalonia's axaml into structures and styles. Structure defines the bones of the UI, similar to the role of Html. Styles define the look and feel of the UI, similar to the role of CSS. This has the following benefits:
 
-### **1. 结构分离**。
+### 1. Structure Separation.&#x20;
 
-开发人员编写页面逻辑和页面功能时，不需要考虑 UI 的样式，专注于功能；而在修改样式时也可以独立而连续地专注于主题样式。
-
-{% hint style="success" %}
-连续专注让我们的工作更加顺滑，优雅，且事半功倍。
-{% endhint %}
-
-### **2. 结构重用**。
-
-UI 的结构可以重用，针对不同主题，不需要重新编写结构的代码，高效且安全。
-
-{% hint style="info" %}
-高可重用的结构，请参考 [ru-he-ding-yi-liang-hao-de-kong-jian-mo-ban.md](../zui-jia-shi-jian/ru-he-ding-yi-liang-hao-de-kong-jian-mo-ban.md "mention")。
-{% endhint %}
-
-### **3. 动态加载**。
-
-Acss 支持代码源的热更新（**热重载**），更新后即时生效。
-
-### **4. 过滤控制**。（**开发中**...）
-
-对于样式可以做更复杂的控制功能，包括属性控制、样式控制、资源控制、动画控制、主题控制等。例如，我们可以根据指定条件控制是否显示动画、Transitions，控制生效的样式、资源分组等。
-
-### **5. 行为扩展**。
-
-我们对 Acss 内置了一些通用行为。例如“`Esc` 键关闭窗口”等。你也可以扩展自己的 Acss 行为。
-
-{% hint style="info" %}
-我们并没有使用 Avalonia.Xaml.Interactivity 这个组件。你仍然可以独立的使用 Acss 行为和 Avalonia 行为库，而不用担心他们之间的冲突。
-{% endhint %}
-
-### **6. 语法扩展**。
-
-基于 Acss 我们可以扩展一些 axaml 不支持的语法，例如样式多继承和跨类型重用。
+Developers do not need to consider the style of the UI when writing page logic and page functionality, so they can focus on functionality; and when modifying the style, they can also focus on the theme style independently and continuously.&#x20;
 
 {% hint style="success" %}
-Acss 样式可以继承多个样式模板（多继承），可以继承通用样式模板（跨类型继承）。
+Continuous focus makes our work smoother, more elegant, and more effective.
 {% endhint %}
 
-### **7. 样式调试**。（**计划中**...）
+### 2. Structure reuse.&#x20;
 
-我们计划提供样式调试工具，方便开发期间浏览一切和 Acss 样式、资源等有关的信息。
+The structure of UI can be reused for different themes without rewriting the structure of the code, which is efficient and safe.&#x20;
 
-### **8. 自定义绘制**。（**计划中**...）
+{% hint style="info" %}
+For a highly reusable structure, see [ru-he-ding-yi-liang-hao-de-kong-jian-mo-ban.md](../zui-jia-shi-jian/ru-he-ding-yi-liang-hao-de-kong-jian-mo-ban.md "mention").
+{% endhint %}
 
-我们计划让 Acss 支持在任意控件上进行自定义的绘制操作。
+### 3. Dynamic loading.&#x20;
+
+Acss supports hot updating (hot reloading) of the code source. The update takes effect immediately.
+
+### 4. Filtering control. (Under development...)&#x20;
+
+Acss can do more complex filters, including property filter, style filter, resource filter, animation filter, theme filter and so on. For example, we can control whether to display animations and transitions according to the specified conditions, and filter the effective styles and resource.
+
+### 5. Behavioral extensions.&#x20;
+
+We have built some general behaviors into Acss. For example, "Esc key to close window" and so on. You can also extend your own behaviors.&#x20;
+
+{% hint style="info" %}
+We don't use the Avalonia.Xaml.Interactivity component. You can still use Acss behaviors and the Avalonia behavior library independently without worrying about conflicts between them.
+{% endhint %}
+
+### 6. Syntax extensions.&#x20;
+
+Based on Acss, we can extend some syntax that is not supported by axaml, such as style inheritance and cross-type reuse.&#x20;
+
+{% hint style="success" %}
+Acss styles can inherit from multiple style templates (multi-inheritance) and can inherit from generic style templates (cross-type inheritance).
+{% endhint %}
+
+### 7. Style debugging. (planned...)&#x20;
+
+We plan to provide a style debugging tool to make it easy to navigate through everything related to Acss styles, resources, etc. during development.
+
+### 8. Custom drawing. (planned...)&#x20;
+
+We plan to make Acss support custom drawing operations on any control.

@@ -1,10 +1,9 @@
-# 性能评估
+# Performance Evaluation
 
-Acss 需要动态加载样式文件，动态生成 Avalonia 资源和样式等对象。因此理论上说，使用 Acss 的程序相比普通的 Avalonia 程序有**更多的内存占用和启动性能消耗**，**运行之后的性能则相对持平**。
+Acss requires dynamic loading of style files and dynamic generation of objects such as Avalonia resources and styles.Therefore, theoretically, programs using Acss **have more memory and startup performance consumption** than normal Avalonia programs, and **the performance after running is relatively flat**.&#x20;
 
-另外，Acss 使用了较多的反射，不支持 AOT，请知悉。
+In addition, Acss uses a lot of reflection and does not support AOT, please be aware of this.
 
 {% hint style="warning" %}
-详细性能评估暂未完成。
+Detailed performance evaluation is not yet complete.
 {% endhint %}
-

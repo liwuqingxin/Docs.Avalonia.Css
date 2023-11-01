@@ -1,15 +1,15 @@
-# 调试
+# Debugging
 
-我们拟提供比较方便的调试功能，包括调试信息和调试工具。不过目前仍在计划当中。
+We intend to provide more convenient debugging functions, including debugging information and debugging tools. However, this is still under planning.
 
 ## Trace
 
-在 v1.0.0-beta.4 版本当中，我们支持了输出关键的 Trace 信息。所有信息都包含关键字 "**Nlnet.Avalonia.Css**"。当前输出了包括类型映射信息、资源类型工厂信息、代码源加载信息等。
+In v1.0.0-beta.4, we support exporting key Trace messages. All messages contain the keyword "**Nlnet.Avalonia.Css**". The current output includes type mapping information, resource type factory information, code source loading information, and more.
 
 {% hint style="success" %}
-如果你对当前输出的信息有任何看法或者建议，欢迎在仓库当中给我们[提出](https://github.com/liwuqingxin/Avalonia.Css/issues)。
+If you have any comments or suggestions about the current output, please feel free to [give](https://github.com/liwuqingxin/Avalonia.Css/issues) them to us in the repository.
 {% endhint %}
 
-## 调试工具
+## Debugging Tool
 
-计划中...
+Planning...

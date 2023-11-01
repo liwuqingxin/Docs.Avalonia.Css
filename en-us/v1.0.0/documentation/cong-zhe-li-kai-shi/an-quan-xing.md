@@ -1,7 +1,7 @@
-# 安全性
+# Security
 
-Acss 负责将代码源解析为 Avalonia 对象，而代码源可以是本地文件，也可以是嵌入程序的 Avalonia 资源，甚至未来可能支持其他类型源，例如网络资源，流资源等。这对程序来说可能会造成一定的风险，请知悉。
+Acss is responsible for parsing code sources into Avalonia objects, which can be local files, Avalonia resources embedded in the program, and may even support other types of sources in the future, such as web resources, streaming resources, and so on. Please be aware that this may pose some risk to the program.
 
 {% hint style="danger" %}
-如果代码的隐私性，或者避免其他安全风险对你很重要，请务必根据你的实际情况谨慎考虑是否使用 Acss。
+If privacy of code, or avoiding other security risks is important to you, be sure to carefully consider whether or not to use Acss in your situation.
 {% endhint %}

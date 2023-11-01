@@ -1,31 +1,31 @@
-# 过程和概念
+# Processes and concepts
 
-Acss 的原理比较简单。其运行过程如下图所示。
+The principle of Acss is relatively simple. Its operation process is shown in the figure below.
 
 <figure><img src="../../.gitbook/assets/Process.png" alt=""><figcaption></figcaption></figure>
 
 ## AcssContext
 
-使用 Acss 时，需要构建一个 Acss 的上下文环境，我们称之为 AcssContext。这个上下文环境负责提供 Acss 运行过程中所需要的所有服务，包括语法分析服务、语法解释服务、类型解析服务、资源等各类工厂、Acss 加载服务、文件监控服务、Acss 配置服务、Rider 配置服务等。这些服务当中，大部分在 Acss 类库当中内置了。部分服务需要用户参与组建，例如类型解析服务。
+When you use Acss, you need to build an Acss context, which we call AcssContext, and this context is responsible for providing all the services needed during Acss operation, including the syntax analysis service, the syntax interpretation service, the type parsing service, the various factories such as resources, the Acss loading service, the file monitoring service, and the Acss configuration service, Rider configuration service. Most of these services are built in the Acss class library. Some of these services require user participation, such as the type resolution service.&#x20;
 
-同时，Acss 还在运行时提供了所有动态资源的访问功能，包括 Acss 文件、Acss Tokens 等。
+At the same time, Acss also provides access to all dynamic resources at runtime, including Acss files, Acss Tokens and so on.
 
 ## TypeResolver
 
-TypeResolver 是一个类型解析服务，部署在 AcssContext 中。用户在构建 AcssContext 时，需要将自己的想要使用 Acss 的类型注册到 TypeResolver 当中。没有被注册的类型出现在 Acss 代码中时，会无法被解析而跳过，并且会输出调试信息，关于调试请查看[这里](tiao-shi.md)。
+TypeResolver is a type resolution service deployed in AcssContext. When building an AcssContext, users need to register the types they want to use with the TypeResolver. When unregistered types appear in Acss code, they will not be parsed and will be skipped, and debugging information will be output, for debugging see [here](tiao-shi.md).
 
 ## Acss Source
 
-Acss Source 是 Acss 代码的定义，在 Acss 中表现为一个名为 ISource 的接口。我们目前内置了两种代码源，本地文件（File Source）和内嵌资源（EmbeddedSource）。具体请参考[代码源](../zhu-ti-bang-zhu/ru-he-shi-yong-acss/dai-ma-yuan.md)。
+Acss Source is the definition of Acss code, which is represented in Acss as an interface called ISource. We currently have two built-in code sources, local files (File Source) and embedded sources (EmbeddedSource). Please refer to [Code Sources](../zhu-ti-bang-zhu/ru-he-shi-yong-acss/dai-ma-yuan.md) for details.
 
 ## AcssTokens
 
-当你使用 Acss 加载器加载一个代码源时，代码源首先被读取解析到内存中，形成原始的模型结构 AcssTokens。
+When you load a code source using the Acss loader, the code source is first read and parsed into memory to form the original model structure, AcssTokens.
 
 {% hint style="success" %}
-注意，Acss 是支持继承和重用的，AcssTokens 也是可重用的。针对一个特定的源，AcssTokens 只会被加载一次。
+Note that Acss supports inheritance and reuse, and AcssTokens are also reusable. AcssTokens will only be loaded once for a particular source.
 {% endhint %}
 
 ## Avalonia Object
 
-Acss 加载器加载过程中，AcssTokens 创建后，会继续被解析为具体的 Avalonia 对象，例如 Style、Resource、Animation、其他 Object 等。这些对象会按照一定的规则被加载到 Avalonia 的 UI 当中。
+After AcssTokens are created during the Acss loader loading process, they continue to be parsed into specific Avalonia objects such as Style, Resource, Animation, other Objects, etc. These objects are loaded into the Avalonia UI according to certain rules.
