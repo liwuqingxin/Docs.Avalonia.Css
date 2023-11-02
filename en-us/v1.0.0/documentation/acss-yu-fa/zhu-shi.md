@@ -1,6 +1,6 @@
 # Comment
 
-Acss supports line comments and block comments. Line comments are represented by "//" and block comments are represented by "/\* \*/".
+Acss supports both line comments and block comments. Line comments are specified by "//" and block comments are specified by "/\* \*/".
 
 ```css
 Code here. // line comment

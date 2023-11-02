@@ -1,12 +1,12 @@
-# 如何使用 Acss.Controls
+# Using Acss.Controls
 
-## 安装依赖库
+## Installation
 
 ```bash
 dotnet add package Nlnet.Avalonia.Css.Controls --version 1.0.0-beta.4
 ```
 
-## 引用资源和样式
+## Import resources and styles
 
 ```xml
 <Styles.Resources>
@@ -20,10 +20,10 @@ dotnet add package Nlnet.Avalonia.Css.Controls --version 1.0.0-beta.4
 <StyleInclude Source="avares://Nlnet.Avalonia.Css.Controls/Assets/Styles.Acss.axaml" />
 ```
 
-## 可选扩展
+## Optional extensions
 
-* TemplatedControlExtension 使用后，会对所有 ControlTemplate 内部的控件加上 `:is-part` 伪类。
-* SelectionDetailExtension 使用后，会对所有 SelectingItemsControl 对象加上切换选中项的具体状态伪类，包括&#x20;
+* TemplatedControlExtension, when used, adds the :is-part pseudo-class to all controls inside the ControlTemplate.
+* SelectionDetailExtension will add state specific pseudo-classes for toggling selected items to all SelectingItemsControl objects.
   * `:sel-detail-leave-smaller`
   * `:sel-detail-leave-lager`
   * `:sel-detail-enter-lager`
@@ -34,22 +34,20 @@ TemplatedControlExtension.Use();
 SelectionDetailExtension.Use();
 ```
 
-## 使用 Acss 定义自己的样式库
+## Define your own style library with Acss
 
-Nlnet.Avalonia.Css.Controls 针对 Avalonia 全部的原生控件定义了一套纯净的控件模板，可以十分友好地支持使用 Acss 扩展样式库。
+Nlnet.Avalonia.Css.Controls defines a clean set of control templates for all of Avalonia's native controls, with friendly support for using the Acss Extended Style Library.
 
 {% hint style="info" %}
-后续计划提供调试工具来支持控件库结构的速览。目前只能通过查看源代码来了解内部结构和一些 classes、name 等。
+It is planned to provide debugging tools to support quick look at the structure of the control library. Currently, you can only see the internal structure and some classes, names, etc. by looking at the source code.
 {% endhint %}
 
 {% hint style="danger" %}
-**最佳实践**
+**Best Practice**
 
-请注意，当你使用 Acss 代码时，请尽量将其放在你特有的名称的路径下，避免和其他库的 Acss 文件共存时，被放入同一目录，导致文件冲突或者错误加载。
+Please note that when you use Acss code, please try to put it under a path with a name specific to you, to avoid it being placed in the same directory as Acss files from other libraries when they co-exist, which can lead to file conflicts or incorrect loading.
 
-
-
-例如，Nlnet.Avalonia.Css.Fluent 库的 Acss 代码文件的基路径为：
+For example, the base path of the Acss code file for the Nlnet.Avalonia.Css.Fluent library is:
 
 > "/Acss/Nlnet.Avalonia.Css.Fluent/"
 {% endhint %}

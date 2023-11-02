@@ -1,22 +1,22 @@
-# 类型解析
+# Type Resolution
 
-类型解析的服务称为类型解析管理器（ITypeResolverManager）。它管理着多个 Acss 内置的和用户注册的类型解析器（ITypeResolver）。
+The service for type resolution is called ITypeResolverManager. It manages multiple Acss built-in and user-registered type resolvers (ITypeResolver).
 
-Acss 除了内置的类型解析外，你需要自行注册所有用到的类型到 AcssContext 当中。未注册的类型将会无法识别而被略过。我们提供了多种类型解析的注册方式。
+In addition to the built-in type parsing of Acss, you need to register all the used types into AcssContext by yourself. Unregistered types will not be recognised and will be skipped. We provide several ways to register types for parsing.
 
 {% hint style="info" %}
-Acss 内置了 Avalonia.Controls，Avalonia.Base 两个程序集内所有 AvaloniaObject 子类类型的解析器，以及部分必要的类型的解析器。
+Acss has built-in parsers for all AvaloniaObject subclass types in the Avalonia.Controls and Avalonia.Base assemblies, as well as for some of the necessary types.
 {% endhint %}
 
 {% hint style="danger" %}
-**特别注意**
+**NOTE**&#x20;
 
-目前我们没有做命名空间的映射，因此类型重名的几率比较大。如果有这种情况，请自行管理重名类型的别名，避免冲突。
+Currently we don't do namespace mapping, so there is a higher chance of type renaming. If this is the case, please manage your own aliases for the renamed types to avoid conflicts.
 {% endhint %}
 
-## 程序集类型解析器
+## Assembly Type Resolver
 
-我们提供了非常方便的程序集类型解析器 `GenericTypeResolver<TTypeSink>`。它可以通过锚定的类型，将其所在程序集中所有 AvaloniaObject 类型的子类都加入到解析器当中。例如：
+We provide a very handy assembly type resolver GenericTypeResolver. It can add all the subclasses of the AvaloniaObject type in its assembly to the resolver by the anchored type. For example:
 
 ```csharp
 // Add all types, which are derived from AvaloniaObject, in the Avalonia.Controls.dll
@@ -24,9 +24,9 @@ Acss 内置了 Avalonia.Controls，Avalonia.Base 两个程序集内所有 Avalon
 var resolver = new GenericTypeResolver<Button>();
 ```
 
-## 自定义类型解析器
+## Custom Type Resolver
 
-用户可以继承默认实现类 `Resolver`，也可以自行实现类型解析器接口 `IResolver` 来定义一个类型解析器。例如：
+Users can inherit from the default implementation class Resolver, or implement the type parser interface IResolver to define a type parser. Example:
 
 ```csharp
 // #1 Use Resolver.
@@ -81,9 +81,9 @@ public class CustomTypeResolver2 : IResolver
 }
 ```
 
-## 添加类型到解析器
+## Adding Types to the Resolver Service
 
-有了类型解析器后，可以将类型添加到该解析器当中。
+Once you have a type parser, you can add types to that parser.
 
 ```csharp
 IResolver resolver = new CustomTypeResolver1();
@@ -99,19 +99,19 @@ resolver.TryAddType<TextBlock>("text");
 ```
 
 {% hint style="info" %}
-**注意**
+**NOTE**&#x20;
 
-* 一个类型可以注册多个别名，可以简化使用。例如上述代码中 'text' 和 'TextBlock' 都可以指代 TextBlock。
-* Acss 的类型解析对**大小写敏感**。
+* A type can be registered with multiple aliases to simplify its use. For example, in the above code, both 'text' and 'TextBlock' can refer to TextBlock.&#x20;
+* Acss type parsing is case sensitive.
 {% endhint %}
 
-## 单个类型
+## Single Type
 
-目前版本我们暂时不支持简单的单个类型的注册，必须借助 `ITypeResolver`。后续考虑提供更加简便的类型注册 API。
+In the current version, we don't support simple registration of individual types, you have to use ITypeResolver, and we'll consider providing a simpler type registration API later.
 
-## 注册类型解析器到管理服务
+## Registering a type parser to Managed Services
 
-如下代码所示。
+As shown in the code below.
 
 ```csharp
 var typeResolverManager = AcssContext.Default.GetService<ITypeResolverManager>();
@@ -122,9 +122,9 @@ typeResolverManager.LoadResolver(resolver);
 typeResolverManager.LoadResolver(new GenericTypeResolver<App>());
 ```
 
-## 在构建 Avalonia 服务时注册类型
+## Registering types when building Avalonia services
 
-如代码所示，添加默认的 AcssContext 后，可以直接针对程序集添加类型解析器。
+As shown in the code, after adding the default AcssContext, you can add a type parser directly against the assembly.
 
 ```csharp
 private static AppBuilder BuildAvaloniaApp()

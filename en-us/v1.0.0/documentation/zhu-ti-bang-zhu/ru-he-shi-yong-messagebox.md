@@ -1,20 +1,20 @@
-# 如何使用 MessageBox
+# Using MessageBox
 
-## 安装依赖库
+## Installation
 
 ```bash
 dotnet add package Nlnet.Avalonia.MessageBox --version 1.0.0-beta.4
 ```
 
-## 使用独立样式的 MessageBox
+## Using standalone styled MessageBox
 
-* 引用资源。
+* Import resource.
 
 ```xml
 <ResourceInclude Source="avares://Nlnet.Avalonia.MessageBox/Assets/Themes.axaml" />
 ```
 
-* 同步使用。
+* Synchronised use.
 
 ```csharp
 // WPF Standard: call messagebox synchronous.
@@ -27,7 +27,7 @@ private void OnClick(object? sender, RoutedEventArgs e)
 }
 ```
 
-* 异步使用。
+* Asynchronous use.
 
 ```csharp
 // Avalonia Standard: call messagebox asynchronous.
@@ -40,21 +40,21 @@ private async void OnClick(object? sender, RoutedEventArgs e)
 }
 ```
 
-## 使用基于 Acss 的 MessageBox
+## Using Acss-based MessageBox
 
-和独立使用的 MessageBox 样式不同之处在于，基于 Acss 的样式加载的样式资源不一样。调用方式则没有区别。
+The difference with standalone MessageBox styles is that Acss-based styles load different style resources. There is no difference in the way it is called.
 
 ```xml
 <ResourceInclude 
     Source="avares://Nlnet.Avalonia.MessageBox/Assets/Themes.Acss.axaml" />
 ```
 
-## 使用自定义样式
+## Using custom styles
 
-你仍然可以自定义 MessageBox 的主题和样式，方法和重写和其他 Avalonia 控件/窗口的主题样式一样。
+You can still customise the theme and style of the MessageBox, in the same way as overriding the theme style of other Avalonia controls/windows.
 
-## 示例代码
+## Samples
 
 {% hint style="success" %}
-我们提供了独立的 MessageBox 示例代码，请在 [Github](https://github.com/liwuqingxin/Avalonia.Css/tree/main/samples/Nlnet.Avalonia.MessageBox.Samples) 上访问它。
+We provide standalone MessageBox example code, visit it on [Github](https://github.com/liwuqingxin/Avalonia.Css/tree/main/samples/Nlnet.Avalonia.MessageBox.Samples).
 {% endhint %}

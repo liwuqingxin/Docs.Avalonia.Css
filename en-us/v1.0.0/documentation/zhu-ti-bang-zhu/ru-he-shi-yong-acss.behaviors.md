@@ -1,29 +1,29 @@
-# 如何使用 Acss.Behaviors
+# Using Acss.Behaviors
 
-作为示例，我们在当前版本提供了两个内置行为。具体使用方式请参考[行为](../acss-yu-fa/hang-wei.md)。
+As examples, we provide two built-in behaviours in the current version. Please refer to the [behavior](../acss-yu-fa/hang-wei.md) for details on how to use them.
 
-* **combobox.popup.align。**这个行为可以将下拉框的下拉列表的选中项对齐到下拉框。
-* **window.esc.close。**这个行为可以让窗口支持相应 `Esc` 键来关闭窗口。
+* **combobox.popup.align**. This behaviour aligns the selected items of a drop-down list to a drop-down box.&#x20;
+* **window.esc.close**. This behaviour allows the window to support the corresponding Esc key to close the window.
 
 {% hint style="success" %}
-更多的内置行为正在计划当中。如果对此你有任何需求，欢迎在[这里](https://github.com/liwuqingxin/Avalonia.Css/issues/new)告诉我们。
+More inbuilt behaviours are being planned. If you have any requests for this, feel free to let us know [here](https://github.com/liwuqingxin/Avalonia.Css/issues/new).
 {% endhint %}
 
-## 安装依赖库
+## Installation
 
 ```bash
 dotnet add package Nlnet.Avalonia.Css.Behaviors --version 1.0.0-beta.4
 ```
 
-## 自定义行为
+## Custom behaviours
 
-* 引用包 Nlnet.Avalonia.Css.CompileGenerator。
+* Import Nlnet.Avalonia.Css.CompileGenerator.
 
 ```bash
 dotnet add package Nlnet.Avalonia.Css.CompileGenerator --version 1.0.0-beta.4
 ```
 
-* 创建行为声明类，继承 AvaloniaObject 类和 IBehaviorDeclarer 接口。
+* Creates a behaviour declaration class, inheriting the AvaloniaObject class and the IBehaviorDeclarer interface.
 
 ```csharp
 public partial class CustomA : AvaloniaObject, IBehaviorDeclarer
@@ -32,7 +32,7 @@ public partial class CustomA : AvaloniaObject, IBehaviorDeclarer
 }
 ```
 
-* 提供使用行为声明类 CustomA 的扩展类。
+* Provides extension classes that use the behaviour declaration class CustomA.
 
 ```csharp
 /// <summary>
@@ -49,7 +49,7 @@ public static AppBuilder UseCustomABehaviorForDefaultContext(this AppBuilder bui
 }
 ```
 
-* 创建自定义行为类，该行为类挂在在行为声明类 CustomA 下。
+* Create a custom behaviour class that hangs under the behaviour declaration class CustomA.
 
 ```csharp
 [Behavior("window.esc.close", typeof(CustomA))]
@@ -90,7 +90,7 @@ public class WindowEscCloseBehavior: AcssBehavior<WindowEscCloseBehavior>
 }
 ```
 
-* 在程序中使用 CustomA 行为声明类。
+* Use the CustomA behaviour to declare classes in your program.
 
 ```csharp
 private static AppBuilder BuildAvaloniaApp()
@@ -109,7 +109,7 @@ private static AppBuilder BuildAvaloniaApp()
 }
 ```
 
-* 在 Acss 代码中使用行为类。
+* Using behavioural classes in Acss code.
 
 ```css
 ComboBoxPage ComboBox#C1{
@@ -120,4 +120,3 @@ NtWindow#RootWindow{
     .acss:window.esc.close;
 }
 ```
-

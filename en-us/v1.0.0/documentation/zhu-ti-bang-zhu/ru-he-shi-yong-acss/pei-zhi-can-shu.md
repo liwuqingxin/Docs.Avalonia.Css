@@ -1,6 +1,6 @@
-# 配置参数
+# Configuration
 
-Acss 支持一些配置，放在了配置服务（IAcssConfiguration）当中。可以通过 AcssContext 拿到配置进行读写。
+Acss supports some configurations, which are placed in the configuration service (IAcssConfiguration). You can read and write the configuration through AcssContext.
 
 ```csharp
 var cfg = AcssContext.Default.GetService<IAcssConfiguration>();
@@ -10,7 +10,7 @@ cfg.EnableTransitions = true;
 ```
 
 {% hint style="info" %}
-Acss 配置目前仅支持设置主题颜色（Accent），是否启用渐变（EnableTransitions）和主题（Theme）。前两个在 IAcssConfiguration 中有定义。最后的主题（Theme）则受 Avalonia 的 ThemeVariant 影响。
+Acss Configuration currently only supports setting the theme colour (Accent), whether to enable transitions (EnableTransitions) and the theme. The first two are defined in IAcssConfiguration. The last one, Theme, is affected by Avalonia's ThemeVariant.&#x20;
 
-其他功能配置待续，欢迎在[这里](https://github.com/liwuqingxin/Avalonia.Css/issues)提供新的场景和需求。
+Other configurations to come, feel free to provide new scenarios and requirements [here](https://github.com/liwuqingxin/Avalonia.Css/issues).
 {% endhint %}

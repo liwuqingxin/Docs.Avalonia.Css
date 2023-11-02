@@ -1,8 +1,8 @@
-# 扩展资源
+# Extending Resources
 
-Acss 的资源（AcssResource）支持扩展。目前我们内置了一些常用的资源类型，你也可以定义自己的资源类型。
+Acss's resources (AcssResource) support extensions. Currently we have some common resource types built-in, and you can also define your own resource types.
 
-## 内置的资源类型
+## Built-in resource types
 
 1. Brush
 2. Color
@@ -14,22 +14,24 @@ Acss 的资源（AcssResource）支持扩展。目前我们内置了一些常用
 8. BoxShadows
 
 {% hint style="success" %}
-在后面的计划中会新增更多的内置资源类型。
+More built-in resource types will be added later in the programme.
 {% endhint %}
 
-## 自定义资源类型
+## Custom Resource Types
 
-Acss 的资源都是继承自抽象类 `AcssResourceBaseAndFac<T>`，定义如下：
+Acss's resources all inherit from the abstract class AcssResourceBaseAndFac, defined as follows:
 
 ```csharp
 public abstract class AcssResourceBaseAndFac<T> : AcssResource, IResourceFactory 
     where T : AcssResource, new()
 ```
 
-你可以继承这个类来扩展自己的资源类型，例如以下代码中，我们扩展定义了 Thickness 的资源类型。该类型的别名有 “Thickness”，“Thick”，“StrokeThickness”，“Margin”，“Padding”。在 Acss 代码中上述的任何一个别名都会被解析为 Thickness 的资源。
+You can inherit this class to extend your own resource types, for example in the following code we extend the resource type that defines Thickness.&#x20;
+
+The aliases for this type are "Thickness", "Thick", "StrokeThickness", " Margin", "Padding". Any of these aliases will be resolved to a Thickness resource in Acss code.
 
 {% hint style="warning" %}
-注意，别名对大小写<mark style="color:red;">**不**</mark>**敏感**。`thick` 和 `Thick` 指代相同的资源类型 `Thickness`。
+Note that aliases are <mark style="color:red;">**not case insensitive**</mark>. thick and thick refer to the same resource type, Thickness.
 {% endhint %}
 
 ```csharp

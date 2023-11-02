@@ -1,14 +1,14 @@
-# 如何使用 Acss.Fluent
+# Using Acss.Fluent
 
-## 安装依赖库
+## Installation
 
 ```bash
 dotnet add package Nlnet.Avalonia.Css.Fluent --version 1.0.0-beta.4
 ```
 
-## 使用主题
+## Use of themes
 
-可以简单地使用 Acss.Fluent 主题。
+It is possible to simply use the Acss.Fluent theme.
 
 ```xml
 <Application.Styles>
@@ -17,19 +17,19 @@ dotnet add package Nlnet.Avalonia.Css.Fluent --version 1.0.0-beta.4
 ```
 
 {% hint style="info" %}
-AcssFluentTheme 使用了嵌入的 Avalonia 资源作为代码源，主题下所有的 Acss 代码将会从资源中提取，这意味着不可更改。
+AcssFluentTheme uses the embedded Avalonia resource as the code source, all Acss code under the theme will be extracted from the resource, which means it cannot be changed.
 {% endhint %}
 
 {% hint style="success" %}
-使用嵌入的代码源的优点是，发布时不需要携带更多的本地代码文件，都单文件发布的发布方式更加友好。
+The advantage of using embedded code sources is that there is no need to carry more local code files with you when you publish, and both single-file releases are much more friendly to publish.
 {% endhint %}
 
-## 使用默认的本地资源
+## Use default local resources
 
-AcssFluentTheme 支持优先使用本地资源。可以通过设置 `UseRecommendedPreferSource` 属性让 AcssFluentTheme 优先加载嵌入资源的 Uri 的 AbsolutePath 作为相对路径的本地文件，相对目录的锚定目录为当前程序目录。
+AcssFluentTheme supports giving preference to local resources. You can set the UseRecommendedPreferSource property to allow AcssFluentTheme to preferentially load local files with the AbsolutePath of the embedded resource's Uri as the relative path, and the anchor directory of the relative directory is the current application directory.
 
 {% hint style="warning" %}
-需要注意的是，当前版本并未对外提供控制嵌入代码源导出的 API，因此使用本地资源的同时，需要设置 AutoExportSourceToLocal 属性为 true，让 AcssFluentTheme 尝试将所有嵌入的代码资源导出到本地。
+Note that the current version does not provide an API for controlling the export of embedded code sources, so when using local resources, you need to set the AutoExportSourceToLocal property to true to allow AcssFluentTheme to try to export all embedded code sources locally.
 {% endhint %}
 
 ```xml
@@ -39,11 +39,11 @@ AcssFluentTheme 支持优先使用本地资源。可以通过设置 `UseRecommen
 </Application.Styles>
 ```
 
-## 使用自定义本地资源
+## Using custom local resources
 
-如果不希望使用默认的本地资源路径，可以通过设置 `PreferLocalPath` 的方式来自定义本地资源路径。这种方式设置的代码源将会有更高的优先级。
+If you do not want to use the default local resource path, you can customise the local resource path by setting PreferLocalPath. Code sources set this way will have a higher priority.&#x20;
 
-举例来说，如果我们希望调试环境和发布环境使用不同的本地目录，例如，调试环境下希望使用源代码目录，发布环境下希望使用当前程序目录，则可以这样使用：
+For example, if we want to use different local directories for the debugging environment and the release environment, e.g., we want to use the source code directory for the debugging environment and the current application directory for the release environment, we can use it this way:
 
 ```xml
 <Application.Styles>
@@ -69,10 +69,10 @@ public static class Cdt
 }
 ```
 
-以上代码中，DEBUG 模式下，PreferLocalPath 使用了 "../../src/Nlnet.Avalonia.Css.Fluent/" 目录，在程序运行时 Acss 会尝试将嵌入的代码源导出到这个目录下，资源目录结构不变，且优先从这个目录加载。
+In the above code, in DEBUG mode, PreferLocalPath uses "... /... /src/Nlnet.Avalonia.Css.Fluent/" directory, Acss will try to export the embedded code source to this directory when the application is running, the resource directory structure remains unchanged, and it will be loaded from this directory first.&#x20;
 
-而非 DEBUG 模式下，PreferLocalPath 则为 null，UseRecommendedPreferSource 生效，Acss 会使用当前目录作为导出和加载目录。
+In non-DEBUG mode, PreferLocalPath is null, UseRecommendedPreferSource is in effect, and Acss will use the current directory as the directory for exporting and loading.
 
 {% hint style="success" %}
-优先使用本地文件的优点是，可以修改本地文件来修改主题样式。
+The advantage of prioritising local files is that they can be modified to change the theme style.
 {% endhint %}
